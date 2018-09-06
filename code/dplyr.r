@@ -21,3 +21,18 @@ diamonds %>% tail(n=5)
 
 tail(head(diamonds, n=4), n=1)
 diamonds %>% head(n=4) %>% tail(n=1)
+
+diamonds
+
+select(diamonds, carat, price)
+diamonds %>% select(carat, price)
+diamonds %>% select(carat, price, color)
+
+diamonds %>% slice(4)
+diamonds %>% slice(c(4, 17, 20))
+
+diamonds %>% filter(carat > 1)
+diamonds %>% filter(cut == 'Ideal')
+diamonds %>% filter(carat > 1 & cut == 'Ideal')
+diamonds %>% filter(cut == 'Ideal' | cut == 'Good')
+
