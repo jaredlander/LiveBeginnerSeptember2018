@@ -36,3 +36,20 @@ diamonds %>% filter(cut == 'Ideal')
 diamonds %>% filter(carat > 1 & cut == 'Ideal')
 diamonds %>% filter(cut == 'Ideal' | cut == 'Good')
 
+diamonds %>% mutate(price / carat)
+diamonds %>% mutate(Ratio=price / carat)
+
+diamonds %>% summarize(mean(price))
+diamonds %>% summarize(mean(price), sum(carat))
+diamonds %>% summarize(AvgPrice=mean(price), TotalSize=sum(carat))
+
+diamonds
+
+diamonds %>% group_by(cut)
+diamonds %>% group_by(cut) %>% summarize(AvgPrice=mean(price))
+
+diamonds %>% 
+    filter(carat > 1) %>% 
+    group_by(cut) %>% 
+    summarize(AvgPrice=mean(price), TotalSize=sum(carat)) %>% 
+    arrange(AvgPrice)
