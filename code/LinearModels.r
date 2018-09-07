@@ -13,3 +13,23 @@ height1
 33.8866 + 0.5141*60
 33.8866 + 0.5141*72
 33.8866 + 0.5141*68
+
+height1$coefficients
+height1$coefficients[1]
+height1$coefficients[2]
+
+source('code/boros.r')
+
+boros
+
+library(useful)
+
+build.x( ~ Pop, data=boros)
+build.x( ~ Pop + Size, data=boros)
+build.x( ~ Pop * Size, data=boros)
+
+build.x( ~ Pop + Size + Random, data=boros)
+
+build.x( ~ Boro, data=boros)
+
+build.x( ~ Pop + Size + Boro, data=boros)
